@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/pkg/errors"
 	"go.uber.org/zap"
 
 	// This controls the maxprocs environment variable in container runtimes.
@@ -21,7 +22,7 @@ func main() {
 func run() error {
 	logger, err := zap.NewProduction()
 	if err != nil {
-		return err
+		return errors.Wrap("test", err)
 	}
 
 	defer logger.Sync()

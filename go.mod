@@ -1,4 +1,4 @@
-module user-deletion-controller
+module some-module
 
 go 1.16
 
@@ -11,6 +11,6 @@ require (
 
 replace (
 	go.uber.org/automaxprocs => go.uber.org/automaxprocs v1.4.0
-	// TODO: this is a comment that break renovatebot
+	// TODO: remove the following replace as soon as new controller-runtime version is available (>v0.11.1)
 	go.uber.org/zap => go.uber.org/zap v1.21.0
 )
